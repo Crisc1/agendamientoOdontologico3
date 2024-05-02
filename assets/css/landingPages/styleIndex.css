@@ -1,0 +1,67 @@
+/* Estilos adicionales */
+body {
+    background: url('../..//img/backgroundGlobal.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* Color de texto blanco */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #cccccc; /* Color de texto más claro al pasar el mouse */
+}
+
+.titulo-navbar{
+    padding: 0px 0px 0px 50px; 
+}
+
+/* Estilo para la sección principal */
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.titulo-agendamiento{
+    display: flex;
+}
+/* Estilo para el contenido */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con mayor opacidad */
+    padding: 20px; /* Añadir espaciado alrededor del contenido */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid #0d6efd; /* Borde de color azul */
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #0d6efd;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Estilo para los botones de contacto en el pie de página */
+.contact-buttons {
+    margin-top: 20px;
+}
+
+.contact-buttons a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #0653A6;
+    transition: background-color 0.3s;
+    margin: 0 10px;
+}
+
+.contact-buttons a:hover {
+    background-color: #1f6690;
+}

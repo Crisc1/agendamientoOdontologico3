@@ -1,0 +1,111 @@
+body {
+    background: url('../../img/backgroundGlobal.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #bd2130;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* Color de texto blanco */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #cccccc; /* Color de texto más claro al pasar el mouse */
+}
+
+.vertical-line {
+    border-left: 1px solid white;
+    height: 30px; /* Altura de la línea vertical */
+    margin: 0 10px; /* Espaciado externo para separación */
+}
+
+.titulo-navbar{
+    padding: 0px 0px 0px 50px; 
+}
+
+.content-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px; /* Add margin to the content container */
+}
+
+h1 {
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+} 
+
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.editar-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.editar-btn:hover {
+    background-color: #0056b3;
+}
+
+.eliminar-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.eliminar-btn:hover {
+    background-color: #bd2130;
+}
+
+.volver-container {
+    background-color: red;
+    padding: 0px 10px 0px 10px;
+    border-radius: 15px;
+}
+
+.volver-link {
+    color: white;
+    text-decoration: none;
+}
