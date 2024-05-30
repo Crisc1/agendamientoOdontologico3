@@ -33,3 +33,19 @@ if(isset($_POST['profesional'])&&isset($_POST['documento'])&&isset($_POST['trata
         echo 'Error:'. $exc;
         }
     }
+    
+    if (isset($_GET['action']) && $_GET['action'] === 'eliminar') {
+        if (isset($_GET['idCita'])) {
+            $idCitaEliminar = $_GET['idCita'];
+
+            // Crear una instancia del modelo de citas
+            $modeloCitas = new modeloCitasPaciente();
+
+            // Llamar al método eliminarCita
+            $resultado = $modeloCitas->eliminarCita($idCitaEliminar);
+
+            // Enviar una respuesta al cliente para indicar el estado de la eliminación
+            echo $resultado ? 'success' : 'error';
+            exit();
+        }
+    }

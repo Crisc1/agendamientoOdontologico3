@@ -4,75 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Lista de Citas</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../assets/js/landingPages/bootstrap.min.js"></script>
+    <script src="../../assets/js/volver.js"></script>
     <link rel="stylesheet" href="../../assets/css/paciente/styleGestionarCitas.css">
-<script>
-    
-       // Utilizar AJAX para cargar los datos de la consulta al cargar la página
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        // Insertar los resultados en el div 'lista-citas'
-                        document.getElementById('lista-citas').innerHTML = xhr.responseText;
-                    } else {
-                        alert('Error en la solicitud al servidor.');
-                    }
-                }
-            };
-
-            // Enviar la solicitud POST al script que realiza la consulta
-            xhr.open('POST', '../controladores/ControlCitas.php', true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhr.send('documento=<?php echo $documento; ?>'); // Puedes pasar otros parámetros según tu lógica
-    
-    
-    function editarCita(idCita) {
-        window.location.href = 'editar_cita.php?id=' + idCita;
-    }
-
-    function confirmarEliminar(idCita) {
-        var confirmacion = confirm('¿Estás seguro de que deseas eliminar esta cita?');
-
-        if (confirmacion) {
-            // Llamar a la función de eliminación
-            eliminarCita(idCita);
-        }
-    }
-
-    function eliminarCita(idCita) {
-        // Utilizar AJAX para enviar la solicitud de eliminación al servidor
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    var respuesta = xhr.responseText;
-                    if (respuesta === 'success') {
-                        alert('Cita eliminada con éxito.');
-                        location.reload();
-                    } else {
-                        alert('Error al eliminar la cita.');
-                    }
-                } else {
-                    alert('Error en la solicitud al servidor.');
-                }
-            }
-        };
-
-        // Enviar la solicitud POST al script de eliminación
-        xhr.open('POST', '../controladores/ControlCitas.php?action=eliminar&idCita=' + idCita, true);
-        xhr.send();
-    }
-</script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="../vista/menus/menuPaciente.php">Centro Odontológico</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+    <header class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand titulo-agendamiento" href="../../vista/paciente/menuPaciente.php" name="name">Agendamiento Odontológico</a>
+            <div id="navbarNav">
+                <button class="bth-volver" onclick="volverPaginaAnterior()">Volver</button>
+            </div>
         </div>
-    </nav>
-    <div class="content-container">
+    </header>
+
+    <div class="content form-container">
         <h1>Lista de Citas</h1>
         <?php
         if (isset($_GET['action']) && $_GET['action'] === 'eliminar') {
@@ -120,5 +67,9 @@
         }
         ?>
     </div>
+
+    <script src="../../assets/js/paciente/gestionCitas/gestionarCitas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 </body>
 </html>

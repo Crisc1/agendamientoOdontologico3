@@ -40,20 +40,24 @@ if (isset($_SESSION['DOCUMENTO'])) {
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand titulo-navbar" href="../../vista/odontologo/menuOdontologo.php">Agendamiento Odontológico</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <div class="volver-container">
-                        <a class="nav-link volver-link" href="#" onclick="goBack()">Volver</a>
-                    </div>
-                </li>
-            </ul>
+        <div class="container">
+            <a class="navbar-brand titulo-agendamiento" href="../../vista/odontologo/menuOdontologo.php" name="name">Agendamiento Odontológico</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="vista/landingPages/iniciarSesion.php">Iniciar de Sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vista/landingPages/registroPersona.php">Resgistrarse</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
+
     
     <div class="content-container">
         <h1>Lista de Citas</h1>
@@ -80,7 +84,7 @@ echo "<tr>
         <td>{$fila->HORA}</td>
         <td>{$fila->NUMERO_CONSULTORIO}</td>
         <td>
-            <form method='post' action='../vista/odontologo/menuHistorial.php'>
+            <form method='post' action='../../vista/odontologo/menuHistorial.php'>
                 <input type='hidden' name='documentoPaciente' value='{$fila->DOCUMENTO_PACIENTE}'>
                 <button type='submit' class='btn editar-btn'>Asistió</button>
             </form>

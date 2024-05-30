@@ -34,27 +34,27 @@ if (isset($_SESSION['DOCUMENTO'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Bienvenido</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../assets/js/landingPages/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../assets/css/odontologo/styleMenuOdontologo.css">
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand titulo-navbar" href="menuOdontologo.php">Agendamiento Odontológico</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto boton botones-navegacion">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Editar Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <hr class="vertical-line">
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cerrarSesion.php">Cerrar Sesion</a>
-                </li>
-            </ul>
+        <div class="container">
+            <a class="navbar-brand titulo-agendamiento" href="index.php" name="name">Agendamiento Odontológico</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="vista/landingPages/iniciarSesion.php">Editar Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cerrarSesion.php">Cerrar Sesion</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -71,16 +71,10 @@ if (isset($_SESSION['DOCUMENTO'])) {
                         <button type="submit" class="btn btn-primary">Consultar Agenda</button>
                     </form>
                 </div>
-                <div class="col-md-6">
-                    <h2>Historial Odontólogico</h2>
-                    <p>Consuta y/o añade novedades al historial de un paciente.</p>
-                    <a href="../odontologo/historialMenu.php" class="btn btn-primary">Consultar - Generar</a>
-                </div>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

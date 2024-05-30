@@ -10,12 +10,12 @@ class modeloCitasPaciente{
             $idTratamiento = $regCita->getIdTratamiento();
             $fecha = $regCita->getFecha();
             $hora = $regCita->getHora();
-            #$consultorio = $regCita->getConsultorio();
-            $sql = "INSERT INTO cita VALUES('null','$idProfesional','$documento','$idTratamiento','$fecha','$hora','1')";
+            $consultorio = $regCita->getIdConsultorio();
+            $sql = "INSERT INTO cita VALUES('null','$idProfesional','$documento','$idTratamiento','$fecha','$hora','$consultorio')";
             $conexion->consultar($sql);
             $res = $conexion->obtenerFilasAfectadas();
             if ($res == 1) {
-                header("Location: ../vista/salidas/paginaExito.php"); 
+                header("Location: ../../vista/paciente/paginaExito.php"); 
                 exit();    
             }else{
                 header("Location: ../vista/salidas/paginaError.php"); 
@@ -56,4 +56,18 @@ class modeloCitasPaciente{
             echo $exc->getMessage();
         }
     }
+    
+    public function eliminarCita($idCita) {
+        try{
+            $conexion = new conexionBD();
+            $conexion->abrir();      
+            $sql= "DELETE FROM cita WHERE ID_CITA = $idCita";
+            $conexion->consultar($sql);
+            $result = $conexion->obtenerResult();
+            $conexion->cerrar();
+            return $result;
+        } catch (Exception $exc) {
+            echo $exc->getMessage();
+        }
+    } 
 }

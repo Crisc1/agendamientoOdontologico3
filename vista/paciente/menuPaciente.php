@@ -46,17 +46,20 @@ if (isset($_SESSION['DOCUMENTO'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="vista/landingPages/iniciarSesion.php">Iniciar de Sesion</a>
+                        <form action="../../controladores/paciente/controlEditarPerfil.php" method="POST" style="display: inline;">
+                            <input type="hidden" name="documentoPersona" value="<?php echo $documento; ?>">
+                            <button type="submit" class="nav-link btn btn-link">Editar Perfil</button>
+                        </form>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="vista/landingPages/registroPersona.php">Resgistrarse</a>
+                        <a class="nav-link" href="cerrarSesion.php">Cerrar Sesión</a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <div class="container">
+    <div class="container1">
         <div class="jumbotron">
             <h1 class="display-4">¡Bienvenido, <?php echo $nombre . ' ' . $apellido; ?>!</h1>
             <hr class="my-4">
@@ -67,11 +70,12 @@ if (isset($_SESSION['DOCUMENTO'])) {
                     <a href="agendarCita.php" class="btn btn-primary">Agendar Cita</a>
                 </div>
                 <div class="col-md-6">
+                    <br>
                     <h2>Edición de citas</h2>
                     <p>Gestiona tus citas odontológicas.</p>
                     <form action="../../controladores/paciente/controlCitasPaciente.php" method="post">
                         <input type="hidden" name="documentoConsultarCitas" id="documentoConsultarCitas" value="<?php echo $documento; ?>">
-                        <button type="submit" class="btn btn-secondary">Modificar Citas</button>
+                        <button type="submit" class="btn btn-primary">Modificar Citas</button>
                     </form>
                 </div>
             </div>

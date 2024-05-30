@@ -5,35 +5,13 @@ $(document).ready(function () {
         cargarTratamientos($(this).val());
     });
 
-    // Resto del código...
 
-    // Función para cargar dinámicamente las opciones de especialidades al cargar la página
-    function cargarEspecialidades() {
-        // Realiza una solicitud AJAX al servidor para obtener las especialidades
-        $.ajax({
-            url: '../../../modelo/paciente/obtenedores/obtenerEspecialidades',  // Reemplaza con la ruta correcta
-            type: 'get',
-            dataType: 'json',
-            success: function (response) {
-                // Limpia y actualiza las opciones del selector de especialidades
-                $('#especialidad').empty().append('<option value="">Seleccione una especialidad</option>');
+    // Obtener la fecha actual en formato ISO (YYYY-MM-DD)
+    var today = new Date().toISOString().split('T')[0];
 
-                if (response.length > 0) {
-                    // Si hay especialidades disponibles, agrega las opciones
-                    $.each(response, function (index, especialidad) {
-                        $('#especialidad').append('<option value="' + especialidad.id + '">' + especialidad.nombre + '</option>');
-                    });
-                } else {
-                    // Si no hay especialidades disponibles, muestra un mensaje
-                    $('#especialidad').append('<option value="" disabled>No hay especialidades disponibles</option>');
-                }
-            },
-            error: function (xhr, status, error) {
-                console.error('Error en la solicitud AJAX de especialidades:', status, error);
-            }
-        });
-    }
-
+    // Establecer la fecha mínima del campo de entrada 'fecha' al día de hoy
+    document.getElementById('fecha').setAttribute('min', today);
+    
     // Función para cargar dinámicamente las opciones de tratamiento según la especialidad seleccionada
     function cargarTratamientos(idEspecialidad) {
         // Realiza una solicitud AJAX al servidor para obtener los tratamientos según la especialidad seleccionada
@@ -61,6 +39,4 @@ $(document).ready(function () {
             }
         });
     }
-
-    // Resto del código...
 });

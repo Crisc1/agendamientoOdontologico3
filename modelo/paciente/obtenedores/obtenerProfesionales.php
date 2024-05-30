@@ -8,7 +8,7 @@ if ($conexionBD->abrir()) {
         $idEspecialidad = $_GET['idEspecialidad'];
 
         // Realizar la consulta a la base de datos para obtener profesionales según la especialidad seleccionada
-        $consulta = "SELECT P.DOCUMENTO, P.NOMBRE, P.APELLIDO, PR.ID_PROFESIONAL
+        $consulta = "SELECT P.DOCUMENTO, P.NOMBRE, P.APELLIDO, PR.ID_CONSULTORIO, PR.ID_PROFESIONAL
                     FROM persona P
                     INNER JOIN profesional PR ON P.DOCUMENTO = PR.DOCUMENTO
                     INNER JOIN profesional_especialidad PE ON PR.ID_PROFESIONAL = PE.ID_PROFESIONAL
@@ -26,7 +26,8 @@ if ($conexionBD->abrir()) {
             while ($fila = $resultado->fetch_assoc()) {
                 $profesionales[] = array(
                     'id_profesional' => $fila['ID_PROFESIONAL'],
-                    'nombre_completo' => $fila['NOMBRE'] . ' ' . $fila['APELLIDO']
+                    'nombre_completo' => $fila['NOMBRE'] . ' ' . $fila['APELLIDO'],
+                    'id_consultorio' => $fila['ID_CONSULTORIO']
                 );
             }
 

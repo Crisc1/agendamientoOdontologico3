@@ -7,25 +7,32 @@ body {
     padding: 0;
 }
 
-.navbar {
-    background-color: #3498db;
-}
-
 .navbar-nav .nav-link {
-    color: #fff;
+    color: #ffffff; /* Color de texto blanco */
 }
 
 .navbar-nav .nav-link:hover {
-    color: #cccccc;
+    color: #cccccc; /* Color de texto más claro al pasar el mouse */
 }
 
-.container {
+.titulo-navbar{
+    padding: 0px 0px 0px 50px; 
+}
+
+.form-container {
+    margin-top: 50px; /* Espacio entre la barra de navegación y el formulario */
+}
+
+.content {
     max-width: 400px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
 }
 
 h1 {
@@ -51,6 +58,20 @@ select {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.bth-volver{
+    background-color: #CD1A1A;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.bth-volver:hover {
+    background-color: #A41515;
 }
 
 button {

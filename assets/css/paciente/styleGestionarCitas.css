@@ -1,34 +1,60 @@
 body {
-    background: url('../imagenes/backGroundLogin.jpg') no-repeat center center fixed;
+    background: url('../../img/backgroundGlobal.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     background-color: #bd2130;
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     height: 100vh;
 }
 
-.navbar {
-    background-color: #007bff;
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-.navbar-dark .navbar-toggler-icon {
-    background-color: #ffffff;
+.navbar-nav .nav-link {
+    color: #ffffff; /* Color de texto blanco */
 }
 
-div {
+.navbar-nav .nav-link:hover {
+    color: #cccccc; /* Color de texto más claro al pasar el mouse */
+}
+
+.titulo-navbar {
+    padding: 0px 0px 0px 50px;
+}
+
+.form-container {
+    margin-top: 60px; /* Reducir este valor si hay mucho espacio superior */
+    margin-bottom: 20px; /* Ajustar según sea necesario para reducir el espacio inferior */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; /* Ajusta este valor según sea necesario */
+    width: 100%;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    box-sizing: border-box;
 }
 
 h1 {
     color: #3498db;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -37,7 +63,7 @@ label {
     margin-bottom: 5px;
 }
 
-input {
+input, select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -62,7 +88,7 @@ th, td {
 th {
     background-color: #3498db;
     color: #fff;
-} 
+}
 
 .btn {
     padding: 8px 15px;
@@ -91,3 +117,15 @@ th {
     background-color: #bd2130;
 }
 
+.bth-volver {
+    background-color: #CD1A1A;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bth-volver:hover {
+    background-color: #A41515;
+}

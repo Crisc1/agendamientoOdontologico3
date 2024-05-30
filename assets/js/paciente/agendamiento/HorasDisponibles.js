@@ -109,6 +109,4 @@ $(document).ready(function () {
         }
         return horas;
     }
-
-    // Resto del código...
 });

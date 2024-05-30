@@ -1,6 +1,6 @@
 <?php
 include '../../controladores/conexionBD.php';
-class modeloOdontologo{
+class modeloAgendaOdontologica{
     public function consultarAgenda($idProfesional) {
          
         try{
