@@ -22,7 +22,7 @@ if (isset($_SESSION['DOCUMENTO'])) {
     $apellido = $_SESSION['APELLIDO'];
 } else {
     // Si no hay sesión activa, redirigir a la página de inicio de sesión
-    header('Location: ../salidas/errorAccesoSinLogin.php');
+    header('Location: ../landingPages/errorAccesoSinLogin.php');
     exit();
 }
 ?>
@@ -70,12 +70,19 @@ if (isset($_SESSION['DOCUMENTO'])) {
                     <a href="agendarCita.php" class="btn btn-primary">Agendar Cita</a>
                 </div>
                 <div class="col-md-6">
-                    <br>
                     <h2>Edición de citas</h2>
                     <p>Gestiona tus citas odontológicas.</p>
                     <form action="../../controladores/paciente/controlCitasPaciente.php" method="post">
                         <input type="hidden" name="documentoConsultarCitas" id="documentoConsultarCitas" value="<?php echo $documento; ?>">
                         <button type="submit" class="btn btn-primary">Modificar Citas</button>
+                    </form>
+                </div>
+                <div>
+                    <h2>Calificar Citas</h2>
+                    <p>Califica tus citas odontologicas</p>
+                    <form action="../../controladores/paciente/controlCalificacion.php" method="post">
+                        <input type="hidden" name="documentoCalificar" id="documentoCalificar" value="<?php echo $documento; ?>">
+                        <button type="submit" class="btn btn-primary">Consultar Agenda</button>
                     </form>
                 </div>
             </div>

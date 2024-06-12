@@ -32,7 +32,11 @@ class claseCitasPaciente{
     public function consultarCitasPaciente($documento) {
         $this->documento= $documento;
     }
-        
+    
+    public function consultarCitasCalificar($documento) {
+        $this->documento= $documento;
+    }
+    
     function  getIdProfesional(){
         return $this->idProfesional;
     } 

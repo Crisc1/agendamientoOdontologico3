@@ -1,0 +1,107 @@
+body {
+    background: url('../../img/backgroundGlobal.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* Color de texto blanco */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #cccccc; /* Color de texto más claro al pasar el mouse */
+}
+
+.titulo-navbar {
+    padding: 0px 0px 0px 50px; 
+}
+
+.content {
+    max-width: 800px; /* Ajusta el ancho del contenido */
+    margin: 50px auto; /* Espacio arriba y abajo, centrado horizontalmente */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #3498db;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.bth-volver {
+    background-color: #CD1A1A;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block; /* Para que ocupe solo el ancho del contenido */
+    text-align: center;
+    text-decoration: none;
+}
+
+.bth-volver:hover {
+    background-color: #A41515;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block; /* Para que ocupe solo el ancho del contenido */
+    text-align: center;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #2980b9;
+}

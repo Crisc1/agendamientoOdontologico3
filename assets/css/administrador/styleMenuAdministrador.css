@@ -1,0 +1,35 @@
+ body {
+            background: url('../..//img/backgroundGlobal.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* Color de texto blanco */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #cccccc; /* Color de texto más claro al pasar el mouse */
+        }
+
+        .vertical-line {
+            border-left: 1px solid white;
+            height: 30px; /* Altura de la línea vertical */
+            margin: 0 10px; /* Espaciado externo para separación */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .jumbotron {
+            left: 20px;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .servicios-citas {
+            margin-top: 20px;
+        }

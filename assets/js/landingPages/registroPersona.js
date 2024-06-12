@@ -104,7 +104,7 @@ function isValidEmail(email) {
 // Función para validar si la fecha de nacimiento permite seleccionar el tipo de documento
 document.getElementById('fecha_nacimiento').addEventListener('blur', function () {
     var fechaNacimiento = new Date(document.getElementById('fecha_nacimiento').value);
-    var tipoDocumentoSelect = document.getElementById('tipo_documento_select');
+    var tipoDocumentoSelect = document.getElementById('tipo_documento');
     var docError = document.getElementById('doc-error');
 
     // Calcula la diferencia de tiempo en milisegundos
@@ -128,7 +128,7 @@ document.getElementById('fecha_nacimiento').addEventListener('blur', function ()
 // Espera a que el documento HTML esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
     // Obtén el elemento select de tipo de documento
-    var tipoDocumentoSelect = document.getElementById("tipo_documento_select");
+    var tipoDocumentoSelect = document.getElementById("tipo_documento");
 
     // Realiza una solicitud AJAX para obtener los tipos de documento
     var xhr = new XMLHttpRequest();
@@ -148,4 +148,80 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
     xhr.send();
+});
+
+//Muestra los mensajes del modelo en forma de alert
+$(document).ready(function() {
+    $('#registroForm').submit(function(event) {
+        event.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '../../controladores/landingPages/controlRegistroPersona.php',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(response) {
+                if (response.status === 'success') {
+                    alert(response.message);
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error: ' + textStatus + ' - ' + errorThrown);
+            }
+        });
+    });
+});
+
+$(document).ready(function() {
+    $('#documento').on('input', function() {
+        var documento = $(this).val();
+        verificarDocumento(documento);
+    });
+
+    $('#correo').on('input', function() {
+        var correo = $(this).val();
+        verificarCorreo(correo);
+    });
+
+    function verificarDocumento(documento) {
+        $.ajax({
+            type: 'POST',
+            url: '../../modelo/landingPages/verificarDocumento.php',
+            data: { documento: documento },
+            dataType: 'json',
+            success: function(response) {
+                if (response.status === 'error') {
+                    $('#documento-error').text(response.message).show();
+                } else {
+                    $('#documento-error').hide();
+                }
+            }
+        });
+    }
+
+    function verificarCorreo(correo) {
+        $.ajax({
+            type: 'POST',
+            url: '../../modelo/landingPages/verificarCorreo.php',
+            data: { correo: correo },
+            dataType: 'json',
+            success: function(response) {
+                if (response.status === 'error') {
+                    $('#correo-error').text(response.message).show();
+                } else {
+                    $('#correo-error').hide();
+                }
+            }
+        });
+    }
+
+    $('#registroForm').submit(function(event) {
+        event.preventDefault();
+        if ($('#documento-error').is(':visible') || $('#correo-error').is(':visible')) {
+            alert('Por favor, corrija los errores antes de enviar el formulario.');
+        } else {
+            // Puedes agregar aquí la lógica para enviar el formulario si no hay errores
+        }
+    });
 });

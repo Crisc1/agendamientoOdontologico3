@@ -1,0 +1,122 @@
+body {
+    background: url('../../imagenes/backGroundLogin.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #bd2130;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #007bff;
+    display: flex; /* Add display property only to the navbar */
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.content-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px; /* Add margin to the content container */
+}
+
+h1 {
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+} 
+
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.editar-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.editar-btn:hover {
+    background-color: #0056b3;
+}
+
+.eliminar-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.eliminar-btn:hover {
+    background-color: #bd2130;
+}
+
+.form-inline .form-control,
+.form-inline .btn {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Estilo para el botón de búsqueda */
+.btn-buscar {
+    background-color: #28a745; /* Color verde constante */
+    color: #fff; /* Texto blanco */
+}
+
+.btn-buscar:hover,
+.btn-buscar:focus {
+    background-color: #218838; /* Color verde en hover y focus */
+}
+
+.btn-volver {
+    background-color: #e63946; /* Cambio de color a un tono de rojo más fuerte */
+    color: #fff;
+    border-color: #e63946; /* Cambio de color del borde */
+    border-radius: 10px;
+    padding: 8px 16px;
+    margin-left: 10px;
+}
+
+.btn-volver:hover {
+    background-color: #cf303e; /* Cambio de color al pasar el ratón */
+    border-color: #cf303e; /* Cambio de color del borde al pasar el ratón */
+}

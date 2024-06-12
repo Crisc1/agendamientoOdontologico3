@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../../assets/js/landingPages/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../../assets/css/landingPages/styleRegistro.css"/>
 </head>
 <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand titulo-navbar" href="#">Agendamiento Odontológico</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto boton botones-navegacion">
                 <li class="nav-item">
@@ -26,10 +26,10 @@
         </div>
     </header>
     
-    <div class="container form-container"> <!-- Contenedor del formulario con espacio superior -->
+    <div class="container form-container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form action="../../controladores/controlPersona.php" method="post">
+                <form id="registroForm">
                     <h1>REGISTRO</h1>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="tipo_documento" class="form-label">Tipo de documento:</label>
-                        <select class="form-select" id="tipo_documento_select" name="tipo_documento" required>
+                        <select class="form-select" id="tipo_documento" name="tipo_documento" required>
                             <!-- Opciones cargadas dinámicamente mediante JavaScript -->
                         </select>
                         <br>
@@ -55,7 +55,7 @@
                     <div class="mb-3">
                         <label for="documento" class="form-label">Número de documento:</label>
                         <input type="tel" class="form-control" id="documento" name="documento" maxlength="10" required>
-                        <div class="error-message" id="doc-error" style="display: none;">El número de documento no puede contener letras, solo puede contener números.</div>
+                        <div class="error-message" id="documento-error" style="display: none;">El número de cédula ya se encuentra registrado.</div>
                     </div>
                     <div class="mb-3">
                         <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento:</label>
@@ -64,7 +64,7 @@
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo electrónico:</label>
                         <input type="email" class="form-control" id="correo" name="correo" required>
-                        <div class="error-message" id="email-error" style="display: none;">El correo electrónico debe ser válido (ejemplo: usuario@hotmail.com).</div>
+                        <div class="error-message" id="correo-error" style="display: none;">El correo electrónico ya se encuentra registrado.</div>
                     </div>
                     <div class="mb-3">
                         <label for="direccion" class="form-label">Dirección:</label>
