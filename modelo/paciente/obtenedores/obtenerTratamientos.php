@@ -10,7 +10,7 @@ if ($conexionBD->abrir()) {
         $idEspecialidad = $_GET['idEspecialidad'];
 
         // Realizar la consulta a la base de datos para obtener tratamientos según la especialidad seleccionada
-        $consulta = "SELECT ID_TRATAMIENTO, NOMBRE_TRATAMIENTO FROM tratamiento WHERE ID_ESPECIALIDAD = $idEspecialidad";
+        $consulta = "SELECT ID_TRATAMIENTO, NOMBRE_TRATAMIENTO FROM TRATAMIENTO WHERE ID_ESPECIALIDAD = $idEspecialidad";
         $conexionBD->consultar($consulta);
 
         // Obtener el resultado de la consulta

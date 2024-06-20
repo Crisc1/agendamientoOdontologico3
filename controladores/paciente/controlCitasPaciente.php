@@ -3,16 +3,17 @@ include '../../clases/paciente/claseCitasPaciente.php';
 include '../../modelo/paciente/modeloCitasPaciente.php';
 
 
-if(isset($_POST['profesional'])&&isset($_POST['documento'])&&isset($_POST['tratamiento'])&&isset($_POST['fecha'])&&isset($_POST['hora'])&&isset($_POST['consultorio'])){
+if(isset($_POST['profesional'])&&isset($_POST['documento'])&&isset($_POST['tratamiento'])&&isset($_POST['fecha'])&&isset($_POST['hora'])&&isset($_POST['consultorio'])&&isset($_POST['sede'])){
     try {
         $idProfesional=$_POST['profesional'];
         $documento=$_POST['documento'];
         $idTratamiento=$_POST['tratamiento'];
         $fecha=$_POST['fecha'];
         $hora = $_POST['hora'];
+        $idSede = $_POST['sede'];
         $consultorio = $_POST['consultorio'];
         $cita=new claseCitasPaciente();
-        $cita->agendarCita($idProfesional, $documento, $idTratamiento, $fecha, $hora, $consultorio);
+        $cita->agendarCita($idProfesional, $documento, $idTratamiento, $fecha, $hora, $idSede, $consultorio);
         $regCita=new modeloCitasPaciente();
         $regCita->regCita($cita);
     } catch (Exception $exc) {

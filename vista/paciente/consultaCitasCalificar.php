@@ -22,16 +22,16 @@
     <div class="content form-container">
         <h1>Lista de Citas</h1>
         <?php
-        if (isset($_GET['action']) && $_GET['action'] === 'eliminar') {
+        if (isset($_GET['action']) && $_GET['action'] === 'calificar') {
             if (isset($_GET['idCita'])) {
-                $idCitaEliminar = $_GET['idCita'];
+                $idCitaCalificar = $_GET['idCita'];
 
-                // Llamar al método eliminarCita
-                $resultado = $modeloCitas->eliminarCita($idCitaEliminar);
+                // Aquí deberías llamar a la función para calificar la cita, no para eliminarla
+                // $resultado = $modeloCitas->calificarCita($idCitaCalificar);
 
-                // Enviar una respuesta al cliente para indicar el estado de la eliminación
-                echo $resultado ? 'success' : 'error';
-                exit();
+                // Enviar una respuesta al cliente para indicar el estado de la calificación
+                // echo $resultado ? 'success' : 'error';
+                // exit();
             }
         }
 
@@ -56,7 +56,7 @@
                         <td>{$fila->HORA}</td>
                         <td>{$fila->NUMERO_CONSULTORIO}</td>
                         <td>
-                            <button class='btn eliminar-btn' onclick='confirmarEliminar({$fila->ID_CITA})'>Eliminar</button>
+                            <button class='btn calificar-btn' onclick='redireccionarACalificar({$fila->ID_CITA})'>Calificar</button>
                         </td>
                     </tr>";
             }
@@ -68,8 +68,14 @@
         ?>
     </div>
 
-    <script src="../../assets/js/paciente/gestionCitas/gestionarCitas.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script>
+        function redireccionarACalificar(idCita) {
+            // Redirige a calificacion.php con el ID de la cita como parámetro en la URL
+            window.location.href = `../../vista/paciente/calificacion.php?idCita=${idCita}`;
+        }
+    </script>
+
 </body>
 </html>

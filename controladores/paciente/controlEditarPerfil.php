@@ -8,7 +8,7 @@ if(isset($_POST['documentoPersona'])){
         $persona=new claseEditarPerfil();
         $persona->consultarInfoPerfil($documentoPersona);
         $consultarPersonas= new modeloEditarPerfil();
-        $result=$consultarPersonas->consultarPersona($persona->getDocumentoPersona());
+        $result=$consultarPersonas->consultarInfoPerfil($persona->getDocumentoPersona());
         require '../../vista/paciente/editarPerfil.php';
     } catch (Exception $exc) {
         // Manejo de errores
@@ -16,18 +16,20 @@ if(isset($_POST['documentoPersona'])){
     }
 }
 
-    else if(isset($_POST['nombre'])&&isset($_POST['apellido'])&&isset($_POST['fecha_nacimiento'])&&isset($_POST['correo'])&&isset($_POST['telefono'])&&isset($_POST['direccion'])){
+    else if(isset($_POST['documento']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['fecha_nacimiento']) && isset($_POST['telefono']) && isset($_POST['correo']) && isset($_POST['direccion'])) {
         try {
-            $idProfesional=$_POST['profesional'];
-            $documento=$_POST['documento'];
-            $idTratamiento=$_POST['tratamiento'];
-            $fecha=$_POST['fecha'];
-            $hora = $_POST['hora'];
-            $consultorio = $_POST['consultorio'];
-            $cita=new claseCitasPaciente();
-            $cita->agendarCita($idProfesional, $documento, $idTratamiento, $fecha, $hora, $consultorio);
-            $regCita=new modeloCitasPaciente();
-            $regCita->regCita($cita);
+            $documento = $_POST['documento'];
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+            $fecha_nacimiento = $_POST['fecha_nacimiento'];
+            $telefono = $_POST['telefono'];
+            $correo = $_POST['correo'];
+            $direccion = $_POST['direccion'];
+            $persona = new claseEditarPerfil();
+            $persona->editarPersona($documento, $nombre, $apellido, $fecha_nacimiento, $telefono, $correo, $direccion);
+            $editarPersona = new modeloEditarPerfil();
+            $editarPersona->guardarInfoPerfil($documento, $nombre, $apellido, $fecha_nacimiento, $telefono, $correo, $direccion);
+            echo'Insernot'.$nombre.$documento;
         } catch (Exception $exc) {
             echo 'Error', $exc();
         }
@@ -35,4 +37,3 @@ if(isset($_POST['documentoPersona'])){
         $alerta = "Llenar todos los campos";
         echo "alert('" . $alerta . "');";
     }
-

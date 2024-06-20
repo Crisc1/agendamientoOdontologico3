@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/agendamientoOdontologico/vista/landingPages/registroPersona.php</file>
-            <file>file:/D:/xampp/htdocs/agendamientoOdontologico/modelo/landingPages/verificarCorreo.php</file>
-            <file>file:/D:/xampp/htdocs/agendamientoOdontologico/modelo/landingPages/modeloRegistroPersona.php</file>
-            <file>file:/D:/xampp/htdocs/agendamientoOdontologico/assets/js/landingPages/registroPersona.js</file>
-            <file>file:/D:/xampp/htdocs/agendamientoOdontologico/modelo/landingPages/verificarDocumento.php</file>
-            <file>file:/D:/xampp/htdocs/agendamientoOdontologico/controladores/landingPages/controlRegistroPersona.php</file>
+            <file>file:/D:/xampp/htdocs/agendamientoOdontologico/modelo/administrador/sedes/modeloEspecialidad.php</file>
+            <file>file:/D:/xampp/htdocs/agendamientoOdontologico/vista/administrador/gestionCitas.php</file>
         </group>
     </open-files>
 </project-private>

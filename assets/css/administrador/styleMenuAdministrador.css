@@ -1,6 +1,10 @@
- body {
+        body {
             background: url('../..//img/backgroundGlobal.jpg') no-repeat center center fixed;
             background-size: cover;
+        }
+
+        .navbar {
+            padding: 0.5rem 1rem; /* Ajusta el padding de la navbar */
         }
 
         .navbar-nav .nav-link {
@@ -18,7 +22,7 @@
         }
 
         .container {
-            margin-top: 50px;
+            margin-top: 20px; /* Ajuste el margen superior de la clase container */
         }
 
         .jumbotron {

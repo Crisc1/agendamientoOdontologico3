@@ -7,7 +7,7 @@ $conexionBD = new conexionBD();
 // Abrir la conexión a la base de datos
 if ($conexionBD->abrir()) {
     // Realizar la consulta a la base de datos
-    $consulta = "SELECT ID_ESPECIALIDAD, NOMBRE_ESPECIALIDAD FROM especialidad";
+    $consulta = "SELECT ID_ESPECIALIDAD, NOMBRE_ESPECIALIDAD FROM ESPECIALIDAD";
     $conexionBD->consultar($consulta);
 
     // Obtener el resultado de la consulta

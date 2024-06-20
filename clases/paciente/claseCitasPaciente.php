@@ -7,6 +7,7 @@ class claseCitasPaciente{
     private $fecha;
     private $hora;
     private $idConsultorio;
+    private $idSede;
     private $idCita;
     
     public function __construct(){
@@ -16,16 +17,18 @@ class claseCitasPaciente{
         $this->fecha="";
         $this->hora="";
         $this->idConsultorio="";
+        $this->idSede="";
         $this->idCita="";
         
     }
     
-    public function agendarCita($idProfesional, $documento, $idTratamiento, $fecha, $hora, $idConsultorio) {
+    public function agendarCita($idProfesional, $documento, $idTratamiento, $fecha, $hora, $idSede, $idConsultorio) {
             $this->idProfesional= $idProfesional;
             $this->documento= $documento;
             $this->idTratamiento= $idTratamiento;
             $this->fecha= $fecha;
             $this->hora= $hora;
+            $this->idSede= $idSede;
             $this->idConsultorio= $idConsultorio;
         }
         
@@ -59,6 +62,10 @@ class claseCitasPaciente{
     
     function  getIdConsultorio(){
         return $this->idConsultorio;
+    } 
+    
+    function  getIdSede(){
+        return $this->idSede;
     } 
     
     function  getIdCita(){

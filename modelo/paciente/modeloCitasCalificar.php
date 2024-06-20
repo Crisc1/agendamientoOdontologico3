@@ -23,7 +23,6 @@ class modeloCitasCalificar{
                 WHERE cita.DOCUMENTO_PACIENTE = $documento
                     AND cita.FECHA >= CURDATE() -- Solo fechas mayores o iguales a la actual
                 ORDER BY cita.FECHA";
-            echo $sql;
             $conexion->consultar($sql);
             $result = $conexion->obtenerResult();
             $conexion->cerrar();

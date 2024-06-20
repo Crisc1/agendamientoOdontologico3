@@ -12,7 +12,7 @@ if (isset($_SESSION['DOCUMENTO'])) {
     // Verificar si el ID_ROL es diferente al permitido
     if ($idRol != $idRolPermitido) {
         // Redirigir a la página de error de acceso
-        header('Location: ../salidas/errorAccesoSinPermisos.php');
+        header('Location: ../landingPages/errorAccesoSinPermisos.php');
         exit();
     }
 
@@ -23,7 +23,7 @@ if (isset($_SESSION['DOCUMENTO'])) {
     $idProfesional = $_SESSION['ID_PROFESIONAL'];
 } else {
     // Si no hay sesión activa, redirigir a la página de inicio de sesión
-    header('Location: ../salidas/errorAccesoSinLogin.php');
+    header('Location: ../landingPages/errorAccesoSinPermisos.php');
     exit();
 }
 ?>

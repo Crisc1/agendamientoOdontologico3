@@ -12,7 +12,7 @@ if ($conexionBD->abrir()) {
         $horasOcupadas = array();
 
         // Obtener las horas ocupadas para la fecha y el profesional
-        $consultaHorasOcupadas = "SELECT HORA FROM cita WHERE FECHA = '$fecha' AND ID_PROFESIONAL = $idProfesional";
+        $consultaHorasOcupadas = "SELECT HORA FROM CITA WHERE FECHA = '$fecha' AND ID_PROFESIONAL = $idProfesional";
         $conexionBD->consultar($consultaHorasOcupadas);
 
         $resultadoHorasOcupadas = $conexionBD->obtenerResult();

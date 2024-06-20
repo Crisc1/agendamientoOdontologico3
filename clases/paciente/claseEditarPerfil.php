@@ -1,6 +1,6 @@
 <?php
 class claseEditarPerfil{
-    private $documentoPersona;
+    private $documento;
     private $nombre;
     private $apellido;
     private $fecha_nacimiento;
@@ -10,7 +10,7 @@ class claseEditarPerfil{
 
     
     public function __construct(){
-        $this->documentoPersona="";
+        $this->documento="";
         $this->nombre="";
         $this->apellido="";
         $this->fecha_nacimiento="";
@@ -20,18 +20,18 @@ class claseEditarPerfil{
         
     }
     
-    public function consultarInfoPerfil($documentoPersona) {
-        $this->documentoPersona= $documentoPersona;
+    public function consultarInfoPerfil($documento) {
+        $this->documentoPersona= $documento;
     }
     
-    public function guardarInfoPerfil($documentoPersona, $nombre, $apellido, $fecha_nacimiento, $correo, $telefono, $direccion) {
-        $this->documentoPersona= $documentoPersona;
-        $this->documentoPersona= $nombre;
-        $this->documentoPersona= $apellido;
-        $this->documentoPersona= $fecha_nacimiento;
-        $this->documentoPersona= $correo;
-        $this->documentoPersona= $telefono;
-        $this->documentoPersona= $direccion;
+    public function editarPersona($documento, $nombre, $apellido, $fecha_nacimiento, $telefono, $correo, $direccion) {
+        $this->documento= $documento;
+        $this->nombre= $nombre;
+        $this->apellido= $apellido;
+        $this->fecha_nacimiento= $fecha_nacimiento;
+        $this->telefono= $telefono;
+        $this->correo= $correo;
+        $this->direccion= $direccion;
     }
     
     function  getDocumentoPersona(){

@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5;url=../../index.php">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redireccionando...</title>
     <style>
@@ -34,16 +35,10 @@
             100% { transform: rotate(360deg); }
         }
     </style>
-    <script>
-        // Función para redirigir después de 5 segundos
-        setTimeout(function () {
-            window.location.href = 'menuPaciente.php';
-        }, 5000);
-    </script>
 </head>
 <body>
-    <h1>Operación completada con éxito.</h1>
-    <div class="loader"></div>
+    <h1>Por favor, inicie sesión para acceder a esta página.</h1>
+    <p class="loader"></p>
     <p>Redireccionando en 5 segundos...</p>
 </body>
 </html>

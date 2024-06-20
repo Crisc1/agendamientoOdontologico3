@@ -35,8 +35,8 @@
             }
         }
 
-        // Verificar si hay resultados
-        if ($result->num_rows > 0) {
+        // Verificar si $result está definido y no es nulo
+        if (isset($result) && $result->num_rows > 0) {
             // Mostrar la tabla con los detalles de las citas
             echo "<table>
                     <tr>
@@ -56,7 +56,7 @@
                         <td>{$fila->HORA}</td>
                         <td>{$fila->NUMERO_CONSULTORIO}</td>
                         <td>
-                            <button class='btn eliminar-btn' onclick='confirmarEliminar({$fila->ID_CITA})'>Eliminar</button>
+                            <button class='btn calificacion-btn' onclick='confirmarEliminar({$fila->ID_CITA})'>calificar</button>
                         </td>
                     </tr>";
             }

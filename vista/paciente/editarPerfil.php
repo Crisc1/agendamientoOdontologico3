@@ -33,83 +33,88 @@ if (isset($_SESSION['DOCUMENTO'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Editar Datos de Persona</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/paciente/styleEditarPerfil.css"/>
 </head>
 <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="../administrador/menuAdministrador.php">Centro Odontológico</a>
-        <div class="navbar-collapse justify-content-end">
-            <button class="btn rounded mr-2 btn-volver" type="button" onclick="window.history.back()">Volver</button>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h1>Editar Perfil</h1>
-        <div class="row">
-            <div class="col-md-12">
-                <form action="guardarCambios.php" method="POST">
-                    <?php
-                    // Verificar si hay resultados de la consulta
-                    if (!empty($result)) {
-                        // Iterar sobre los resultados
-                        foreach ($result as $persona) {
-                            ?>
-                            <!-- Campo oculto para el documento de la persona -->
-                            <input type="hidden" name="documentoPersona" value="<?= $persona['DOCUMENTO']; ?>">
-                            
-                            <!-- Campo de nombre -->
-                            <div class="form-group">
-                                <label for="nombre">Nombre:</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $persona['NOMBRE']; ?>">
-                            </div>
-                            
-                            <!-- Campo de apellido -->
-                            <div class="form-group">
-                                <label for="apellido">Apellido:</label>
-                                <input type="text" class="form-control" id="apellido" name="apellido" value="<?= $persona['APELLIDO']; ?>">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="tipoDocumento">Tipo de Documento:</label>
-                                <input type="text" class="form-control" id="tipoDocumentoAnterior" name="tipoDocumentoAnterior" value="<?= $persona['TIPO_DOCUMENTO']; ?>" readonly>
-                            </div>
-                            
-                            <!-- Campo de correo -->
-                            <div class="form-group">
-                                <label for="correo">Fecha de Nacimiento:</label>
-                                <input type="date" class="form-control" id="correo" name="correo" value="<?= $persona['FECHA_NACIMIENTO']; ?>">
-                            </div>
-                            
-                            <!-- Campo de correo -->
-                            <div class="form-group">
-                                <label for="correo">Correo:</label>
-                                <input type="email" class="form-control" id="correo" name="correo" value="<?= $persona['CORREO']; ?>">
-                            </div>
-                            
-                            <!-- Campo de teléfono -->
-                            <div class="form-group">
-                                <label for="telefono">Teléfono:</label>
-                                <input type="text" class="form-control" id="telefono" name="telefono" value="<?= $persona['TELEFONO']; ?>">
-                            </div>
-                            
-                            <!-- Campo de direccion -->
-                            <div class="form-group">
-                                <label for="telefono">Dirección:</label>
-                                <input type="text" class="form-control" id="telefono" name="telefono" value="<?= $persona['DIRECCION']; ?>">
-                            </div>
-                            <?php
-                        }
-                    } else {
-                        echo "<p>No se encontraron resultados.</p>";
-                    }
-                    ?>
-                    <!-- Botón para guardar cambios -->
-                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                </form>
+    <header class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Centro Odontológico</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button class="bth-volver" onclick="volverPaginaAnterior()">Volver</button>
+                    </li>
+                </ul>
             </div>
         </div>
+    </header>
+
+    <div class="content">
+        <h1>Editar Perfil</h1>
+        <form action="../../controladores/paciente/controlEditarPerfil.php" method="POST">
+            <?php
+            // Verificar si hay resultados de la consulta
+            if (!empty($result)) {
+                // Iterar sobre los resultados
+                foreach ($result as $persona) {
+                    ?>
+                    <!-- Campo oculto para el documento de la persona -->
+                    <input type="hidden" name="documento" id="documento" value="<?= $persona['DOCUMENTO']; ?>">
+                    
+                    <!-- Campo de nombre -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $persona['NOMBRE']; ?>">
+                    </div>
+                    
+                    <!-- Campo de apellido -->
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" value="<?= $persona['APELLIDO']; ?>">
+                    </div>
+                    
+                    <!-- Campo de tipo de documento -->
+                    <div class="form-group">
+                        <label for="tipoDocumento">Tipo de Documento:</label>
+                        <input type="text" class="form-control" id="tipoDocumento" name="tipoDocumentoAnterior" value="<?= $persona['TIPO_DOCUMENTO']; ?>" readonly>
+                    </div>
+                    
+                    <!-- Campo de fecha de nacimiento -->
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" value="<?= $persona['FECHA_NACIMIENTO']; ?>">
+                    </div>
+                    
+                    <!-- Campo de correo -->
+                    <div class="form-group">
+                        <label for="correo">Correo:</label>
+                        <input type="email" class="form-control" id="correo" name="correo" value="<?= $persona['CORREO']; ?>">
+                    </div>
+                    
+                    <!-- Campo de teléfono -->
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" value="<?= $persona['TELEFONO']; ?>">
+                    </div>
+                    
+                    <!-- Campo de dirección -->
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" value="<?= $persona['DIRECCION']; ?>">
+                    </div>
+                    <?php
+                }
+            } else {
+                echo "<p>No se encontraron resultados.</p>";
+            }
+            ?>
+            <!-- Botón para guardar cambios -->
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
     </div>
 </body>
 </html>

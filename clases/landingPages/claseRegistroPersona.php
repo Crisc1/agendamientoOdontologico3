@@ -38,8 +38,8 @@ class claseRegistroPersona{
         $this->contrasena= $contrasena;
     }
     
-    public function editarPaciente($documento, $tipo_documento, $nombre, $apellido, $fecha_nacimiento, $telefono, $correo, $direccion, $contrasena) {
-        $this->doc= $documento;
+    public function editarPersona($documento, $tipo_documento, $nombre, $apellido, $fecha_nacimiento, $telefono, $correo, $direccion) {
+        $this->documento= $documento;
         $this->tipo_documento= $tipo_documento;
         $this->nombre= $nombre;
         $this->apellido= $apellido;
@@ -47,7 +47,6 @@ class claseRegistroPersona{
         $this->telefono= $telefono;
         $this->correo= $correo;
         $this->direccion= $direccion;
-        $this->contrasena= $contrasena;
     }
 
     function  getDocumento(){
